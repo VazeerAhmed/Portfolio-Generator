@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Setup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a202c;
+            --secondary: #E50914;
+            --text: #f7fafc;
+            --background: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #3b82f6;
+            --input-bg: #2d3748;
+            --error: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+            *{
+                cursor: url("1.png"), auto !important;
+
+            }
+            
+        
+
+        input, button, textarea, select {
+        cursor: url("1.png"), auto;
+        }
+
+        .setup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent);
+        }
+
+        .form-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--card-bg);
+            border-radius: 8px;
+            background: var(--input-bg);
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: var(--hover-color);
+            transform: translateY(-2px);
+        }
+
+        .remove-btn {
+            background: var(--error);
+            margin-top: 1rem;
+        }
+
+        .remove-btn:hover {
+            background: #dc2626;
+        }
+
+        .project-entry,
+        .skill-entry {
+            padding: 1.5rem;
+            background: var(--input-bg);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .add-button {
+            background: transparent;
+            border: 2px solid var(--accent);
+            margin-top: 1rem;
+        }
+
+        .add-button:hover {
+            background: var(--accent);
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            background: linear-gradient(to right, var(--accent), #2563eb);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .setup-container {
+                padding: 1rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+    <div class="setup-container">
+        <h1>Setup Your Portfolio</h1>
+        <form id="portfolioForm">
+            <div class="form-section">
+                <h2>Basic Information</h2>
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Please enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="title">Professional Title</label>
+                    <input type="text" id="title" placeholder="e.g., Software Engineer" required>
+                </div>
+            </div>
+    
+            <div class="form-section">
+                <h2>About Me</h2>
+                <div class="input-group">
+                    <label for="about">About Description</label>
+                    <textarea id="about" placeholder="Write a brief description about yourself" required></textarea>
+                </div>
+            </div>
+    
+            <div class="form-section">
+                <h2>Projects</h2>
+                <div id="projectsContainer">
+                    <!-- Project entries will be added here -->
+                </div>
+                <button type="button" class="button add-button" onclick="addProject()">Add Another Project</button>
+            </div>
+    
+            <div class="form-section">
+                <h2>Skills</h2>
+                <div id="skillsContainer">
+                    <!-- Skill entries will be added here -->
+                </div>
+                <button type="button" class="button add-button" onclick="addSkill()">Add Another Skill Category</button>
+            </div>
+
+            <!-- New Section: Personal Projects -->
+            <div class="form-section">
+                <h2>Personal Projects</h2>
+                <div id="personalProjectsContainer">
+                    <!-- Personal Project entries will be added here -->
+                </div>
+                <button type="button" class="button add-button" onclick="addPersonalProject()">Add Personal Project</button>
+            </div>
+
+            <!-- New Section: Certifications & Courses -->
+            <div class="form-section">
+                <h2>Certifications & Courses</h2>
+                <div id="certificationsContainer">
+                    <!-- Certifications entries will be added here -->
+                </div>
+            <button type="button" class="button add-button" onclick="addCertification()">Add Certification/Course</button>
+            </div>
+
+            <!-- New Section: Internships -->
+            <div class="form-section">
+                <h2>Internships</h2>
+                <div id="internshipsContainer">
+                    <!-- Internships entries will be added here -->
+                </div>
+            <button type="button" class="button add-button" onclick="addInternship()">Add Internship</button>
+            </div>
+
+            <!-- New Section: Education -->
+            <div class="form-section">
+                <h2>Education</h2>
+                <div id="educationContainer">
+                    <!-- Education entries will be added here -->
+                </div>
+            <button type="button" class="button add-button" onclick="addEducation()">Add Education</button>
+            </div>
+
+            <!-- New Section: Achievements -->
+            <div class="form-section">
+                <h2>Achievements</h2>
+                <div id="achievementsContainer">    
+                <!-- Achievements entries will be added here -->
+               </div>
+            <button type="button" class="button add-button" onclick="addAchievement()">Add Achievement</button>
+            </div>
+
+            <!-- New Section: Extra-Curricular Activities -->
+            <div class="form-section">
+                <h2>Extra-Curricular Activities</h2>
+                <div id="extraCurricularContainer">
+                    <!-- Extra-curricular entries will be added here -->
+                </div>
+                <button type="button" class="button add-button" onclick="addExtraCurricular()">Add Extra-Curricular Activity</button>
+            </div>         
+    
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="123-456-7890" required>
+                </div>
+                <div class="input-group">
+                    <label for="linkedin">LinkedIn URL</label>
+                    <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourprofile" required>
+                </div>
+                <div class="input-group">
+                    <label for="github">GitHub URL</label>
+                    <input type="url" id="github" placeholder="https://github.com/yourusername" required>
+                </div>
+            </div>
+    
+            <button type="submit" class="button submit-button">Generate Portfolio</button>
+        </form>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
