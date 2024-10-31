@@ -34,6 +34,220 @@
                 cursor: url("1.png"), auto !important;
 
             }
+
+        /* Base styles for the container */
+.setup-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Base styles for form sections */
+.form-section {
+    background: inherit;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Input field base styles */
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+input, 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px; /* Base font size for better readability */
+}
+
+/* Button base styles */
+.add-button {
+    width: auto;
+    padding: 12px 24px;
+    margin: 10px 0;
+}
+
+/* Large Desktop Screens (1200px and up) */
+@media (min-width: 1200px) {
+    .setup-container {
+        padding: 40px;
+    }
+    
+    .form-section {
+        padding: 30px;
+    }
+}
+
+/* Desktop and Tablet Landscape (992px to 1199px) */
+@media (max-width: 1199px) {
+    .setup-container {
+        max-width: 960px;
+        padding: 30px;
+    }
+}
+
+/* Tablet Portrait (768px to 991px) */
+@media (max-width: 991px) {
+    .setup-container {
+        max-width: 720px;
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Large Mobile (576px to 767px) */
+@media (max-width: 767px) {
+    .setup-container {
+        max-width: 540px;
+        padding: 15px;
+    }
+    
+    .form-section {
+        padding: 12px;
+        margin: 15px 0;
+    }
+    
+    /* Increase touch targets for better mobile interaction */
+    input, 
+    textarea, 
+    button {
+        min-height: 44px;
+    }
+    
+    /* Make buttons full width on mobile */
+    .add-button {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    /* Adjust text alignment for better mobile reading */
+    .helper-text {
+        text-align: left;
+        padding: 5px 0;
+    }
+}
+
+/* Small Mobile (575px and below) */
+@media (max-width: 575px) {
+    .setup-container {
+        padding: 10px;
+    }
+    
+    .form-section {
+        padding: 10px;
+        margin: 10px 0;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    /* Stack form elements vertically */
+    .input-group {
+        margin-bottom: 15px;
+    }
+    
+    /* Adjust input sizing */
+    input, 
+    textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    /* Make sure buttons are easily tappable */
+    .add-button,
+    .generate-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        margin: 8px 0;
+    }
+    
+    /* Adjust spacing for stacked elements */
+    .helper-text {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+}
+
+/* Handle landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .setup-container {
+        padding: 10px;
+    }
+    
+    .form-section {
+        padding: 8px;
+        margin: 8px 0;
+    }
+    
+    /* Optimize form for landscape view */
+    .input-group {
+        margin-bottom: 8px;
+    }
+    
+    input, 
+    textarea {
+        padding: 8px;
+    }
+}
+
+/* Handle high-DPI (Retina) displays */
+@media (-webkit-min-device-pixel-ratio: 2), 
+       (min-resolution: 192dpi) {
+    /* Adjust box shadows for sharper appearance */
+    .form-section {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    }
+    
+    /* Ensure borders are sharp */
+    input, 
+    textarea {
+        border-width: 0.5px;
+    }
+}
+
+/* Print styles for better document printing */
+@media print {
+    .setup-container {
+        max-width: none;
+        padding: 0;
+    }
+    
+    .form-section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .add-button {
+        display: none;
+    }
+}
             
         
 
