@@ -388,12 +388,6 @@ textarea {
         }
     </style>
 </head>
-     <div class="terminal-notice">
-        <div class="terminal-line"></div>
-        <div class="terminal-line"></div>
-        <div class="terminal-line"></div>
-    </div>
-    
     <div class="setup-container">
         <h1>Setup Your Portfolio</h1>
         <form id="portfolioForm">
@@ -511,84 +505,6 @@ textarea {
         </form>
     </div>
     
-    <script src="scripts.js">
-    import { useState, useEffect } from 'react';
-
-const TerminalNotice = () => {
-  const [text, setText] = useState(['', '', '']);
-  const [currentLine, setCurrentLine] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  
-  const lines = [
-    "If the UI is not supported on your device,",
-    "turn on desktop mode in settings,",
-    "or if you need any help or queries mail me on vazeerahmadmohammad@gmail.com"
-  ];
-  
-  const typingSpeed = 50;
-  const deletingSpeed = 30;
-  const pauseTime = 2000;
-  
-  useEffect(() => {
-    let timeout;
-    
-    const currentFullLine = lines[currentLine];
-    const currentTypedLine = text[currentLine];
-    
-    if (!isDeleting) {
-      if (currentTypedLine === currentFullLine) {
-        if (currentLine === lines.length - 1) {
-          timeout = setTimeout(() => {
-            setIsDeleting(true);
-          }, pauseTime);
-        } else {
-          timeout = setTimeout(() => {
-            setCurrentLine(currentLine + 1);
-          }, typingSpeed);
-        }
-      } else {
-        timeout = setTimeout(() => {
-          const newText = [...text];
-          newText[currentLine] = currentFullLine.slice(0, currentTypedLine.length + 1);
-          setText(newText);
-        }, typingSpeed);
-      }
-    } else {
-      if (currentLine === 0 && currentTypedLine === '') {
-        setIsDeleting(false);
-        setText(['', '', '']);
-        setCurrentLine(0);
-      } else if (currentTypedLine === '') {
-        timeout = setTimeout(() => {
-          setCurrentLine(currentLine - 1);
-        }, deletingSpeed);
-      } else {
-        timeout = setTimeout(() => {
-          const newText = [...text];
-          newText[currentLine] = currentFullLine.slice(0, currentTypedLine.length - 1);
-          setText(newText);
-        }, deletingSpeed);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, currentLine, isDeleting]);
-
-  return (
-    <div className="text-green-400 p-4 font-mono text-sm">
-      {text.map((line, index) => (
-        <div key={index} className="min-h-[1.5rem]">
-          <span>{line}</span>
-          {index === currentLine && (
-            <span className="animate-pulse">_</span>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default TerminalNotice;
-        </script>
+    <script src="scripts.js"> </script>
 </body>
 </html>
