@@ -4,6 +4,12 @@ An interactive web-based portfolio generator that creates beautiful, responsive 
 
 Live Demo: [Portfolio Generator](https://vazeerahmed.github.io/Portfolio-Generator/)
 
+or 
+
+Scan the code: 
+
+![bing_generated_qrcode](https://github.com/user-attachments/assets/72797b87-5975-4c18-a798-cffc207664bb)
+
 ## Features
 
 - 🎨 Modern and responsive design
