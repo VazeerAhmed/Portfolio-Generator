@@ -43,15 +43,21 @@
     box-sizing: border-box;
 }
 
-/* Base styles for form sections */
-.form-section {
-    background: inherit;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* Adjust the container to use a grid layout */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust columns based on available space */
+    gap: 20px; /* Add spacing between the grid items */
 }
 
+.form-section {
+    background: inherit;
+    margin: 0; /* Remove default margin as grid handles spacing */
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 /* Input field base styles */
 .input-group {
     margin-bottom: 20px;
